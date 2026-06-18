@@ -158,7 +158,7 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
         name: "India Stock Discovery Agent",
         context: "Public GitHub project | financial research tooling",
         bullets: [
-          "Adapted the xai_finance_agent starter into a FastAPI and React research app for investor profiling, deterministic suitability guardrails, Indian stock research candidates, and local decision journaling.",
+          "Built a FastAPI and React research app for investor profiling, deterministic suitability guardrails, Indian stock research candidates, and local decision journaling.",
           "Kept risk controls in native Python application logic so the app supports research workflows without relying on prompt-only buy/sell safeguards."
         ]
       },

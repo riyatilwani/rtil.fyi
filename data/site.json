@@ -100,7 +100,7 @@
       "role": "Builder",
       "year": "Public project",
       "theme": "Financial research tooling",
-      "summary": "Adapted the xai_finance_agent starter into a trust-first Indian equity research app for building an investor profile, applying suitability guardrails, discovering stocks to research, and journaling decisions.",
+      "summary": "Built a trust-first Indian equity research app for building an investor profile, applying suitability guardrails, discovering stocks to research, and journaling decisions.",
       "challenge": "The app needed to support research without drifting into buy/sell recommendations, so risk controls and suitability labels had to come from deterministic application logic rather than prompt-only behavior.",
       "outcome": "Built a FastAPI backend and Vite React frontend with investor-profile capture, native Python guardrails, Indian stock research candidates, and a local decision journal for watchlist, skipped, and bought ideas.",
       "stack": [
@@ -362,7 +362,7 @@
   "github": [
     {
       "name": "india-stock-discovery-agent",
-      "description": "Trust-first Indian equity research app, adapted from xai_finance_agent, with investor profiling, deterministic suitability guardrails, research candidates, and a local decision journal.",
+      "description": "Trust-first Indian equity research app with investor profiling, deterministic suitability guardrails, research candidates, and a local decision journal.",
       "url": "https://github.com/riyatilwani/india-stock-discovery-agent",
       "stack": [
         "Python",
