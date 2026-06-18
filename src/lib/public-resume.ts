@@ -33,7 +33,7 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
     },
     headline: "Senior Full-Stack Engineer | Backend Systems, AI Product Workflows, Technical Leadership",
     summary:
-      "Senior full-stack engineer with 8+ years across marketplace systems, mobility, travel technology, AI products, and startup product engineering. Owns ambiguous backend-heavy work end to end: architecture, APIs, data modelling, integrations, deployments, and pragmatic delivery. Currently a founding engineer building creator tooling and a fractional CTO leading product architecture, developer execution, DevOps, and AI workflow experiments for startup teams.",
+      "Senior full-stack engineer with 8+ years across marketplace systems, mobility, travel technology, AI products, and startup product engineering. Owns ambiguous backend-heavy work end to end: architecture, APIs, data modelling, integrations, deployments, and pragmatic delivery. Currently a founding engineer building an AI-powered creator tooling dev platform and a fractional CTO leading product architecture, developer execution, DevOps, and AI workflow experiments for startup teams.",
     skills: [
       {
         title: "Backend and product systems",
@@ -41,11 +41,11 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
       },
       {
         title: "AI and workflow automation",
-        items: ["AI product workflows", "LLM integrations", "Context-aware transcription", "Report generation", "Workflow automation", "Human review loops", "Document generation"]
+        items: ["AI product workflows", "LLM integrations", "SVG and Lottie ingestion", "Local-first RAG", "Bhashini ASR", "Context-aware transcription", "Report generation", "Workflow automation"]
       },
       {
         title: "Full-stack implementation",
-        items: ["React", "Node.js", "Django", "Golang", "Java Spring Boot", "TypeScript", "JavaScript", "MongoDB"]
+        items: ["React", "Node.js", "Django", "FastAPI", "Golang", "Java Spring Boot", "TypeScript", "JavaScript", "MongoDB"]
       },
       {
         title: "Technical leadership",
@@ -53,7 +53,7 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
       },
       {
         title: "Cloud and operations",
-        items: ["AWS", "Kubernetes", "CircleCI", "Harness", "Datadog", "Stripe", "Azure", "CloudFront"]
+        items: ["AWS", "Kubernetes", "CircleCI", "Harness", "Datadog", "Stripe", "Azure", "CloudFront", "Firebase"]
       }
     ],
     experience: [
@@ -65,6 +65,7 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
         period: "2026 - Present",
         bullets: [
           "Own early product engineering for live streamer and content creator tooling across architecture, backend systems, frontend workflows, integrations, and product tradeoffs.",
+          "Develop an AI-powered dev platform that ingests AI-processed SVG and Lottie widgets through a repeatable pipeline, reducing the manual effort required to build a large creator widget library.",
           "Turn ambiguous creator workflows into product surfaces designed for live, high-pressure usage and rapid early-stage iteration.",
           "Work close to founder priorities to move from product insight to usable creator tooling without overbuilding the first architecture."
         ]
@@ -131,10 +132,11 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
     ],
     projects: [
       {
-        name: "Race data management platform",
-        context: "Clearroute / United Autosports | operational systems",
+        name: "AI-powered creator widget dev platform",
+        context: "Stealth startup | creator tooling",
         bullets: [
-          "Modelled nuanced and unstructured race data from loose Excel sheets into more usable flows for retrieval, analysis, and operational tooling."
+          "Developed a pipeline-oriented platform for ingesting AI-processed SVG and Lottie widget assets, normalizing them into reusable creator-facing components, and reducing repetitive manual build effort.",
+          "Owned product and technical tradeoffs across early architecture, backend workflows, frontend tooling, integrations, and iteration speed for a creator tools startup."
         ]
       },
       {
@@ -145,10 +147,27 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
         ]
       },
       {
-        name: "Bhashini language tooling",
-        context: "Public GitHub project | Hindi writing and diction",
+        name: "Ledger Lens local-first finance explainer",
+        context: "Public GitHub project | privacy-first finance tooling",
         bullets: [
-          "Built Hindi writing and diction tooling using Government of India Bhashini APIs."
+          "Built a local-first Python finance explainer that ingests CSV and text-based PDF statements, sanitizes transaction text, embeds evidence locally, and stores retrieval context in LanceDB.",
+          "Designed the product boundary so deterministic code computes financial facts while retrieval and optional LLM layers explain only sanitized evidence."
+        ]
+      },
+      {
+        name: "India Stock Discovery Agent",
+        context: "Public GitHub project | financial research tooling",
+        bullets: [
+          "Adapted the xai_finance_agent starter into a FastAPI and React research app for investor profiling, deterministic suitability guardrails, Indian stock research candidates, and local decision journaling.",
+          "Kept risk controls in native Python application logic so the app supports research workflows without relying on prompt-only buy/sell safeguards."
+        ]
+      },
+      {
+        name: "Satsang Lekhan Hindi transcription PWA",
+        context: "Public GitHub project | Hindi speech-to-text and language tooling",
+        bullets: [
+          "Built a React and Firebase PWA for long-form Hindi speech-to-text, using browser recording, automatic audio chunking, Firebase Cloud Functions, Bhashini ASR, and Firestore chapter sync.",
+          "Added Google sign-in, per-user chapter storage, local autosave, spoken punctuation handling, copy, print, export, and installable mobile PWA behavior for family use."
         ]
       }
     ],
@@ -159,6 +178,15 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
       "Product engineering",
       "AI workflows",
       "LLM integrations",
+      "Local-first RAG",
+      "LanceDB",
+      "FastAPI",
+      "Bhashini ASR",
+      "Firebase",
+      "PWA",
+      "SVG ingestion",
+      "Lottie ingestion",
+      "Creator tooling",
       "Microservices",
       "REST APIs",
       "Data modelling",

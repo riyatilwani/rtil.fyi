@@ -156,9 +156,9 @@ export default async function Home() {
 
       <section className="section" id="work">
         <SectionHead
-          label="Selected builds"
-          title="Representative problems I have worked through."
-          intro="A few deeper examples that show the kind of systems, product ambiguity, data modelling, and AI workflows I can own beyond a role title."
+          label="Notable work"
+          title="Representative product and systems problems I have owned."
+          intro="A few deeper examples that show the kind of systems, product ambiguity, platform thinking, and AI workflows I can own beyond a role title."
         />
         <div className="case-list">
           {content.projects.map((project, index) => {
@@ -291,7 +291,7 @@ function Header() {
           <Briefcase size={14} aria-hidden /> Experience
         </a>
         <a href="#work">
-          <FolderGit2 size={14} aria-hidden /> Selected builds
+          <FolderGit2 size={14} aria-hidden /> Work
         </a>
         <a href="#services">
           <Wrench size={14} aria-hidden /> Services

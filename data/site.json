@@ -31,8 +31,7 @@
     "StockX",
     "Ola Electric",
     "Amadeus",
-    "Lumentis AI",
-    "Clearroute"
+    "Lumentis AI"
   ],
   "positioning": [
     "Marketplace and checkout systems",
@@ -59,19 +58,77 @@
   ],
   "projects": [
     {
-      "name": "Creator tooling for live digital experiences",
+      "name": "AI-powered creator widget platform",
       "client": "Stealth startup",
       "role": "Founding engineer",
       "year": "Current",
-      "theme": "Creator tooling",
-      "summary": "Building early product infrastructure for live streamers and content creators, with tools that support interactive branded experiences across live digital content.",
-      "challenge": "The product has to feel fast and lightweight while the direction is still being shaped. That means making architecture and workflow decisions that preserve room for iteration without turning early product code into throwaway work.",
-      "outcome": "Owning full-stack product engineering across architecture, backend systems, frontend workflows, integrations, and product tradeoffs so the startup can move quickly from founder insight to usable creator tooling.",
+      "theme": "Creator dev platform",
+      "summary": "Developing an AI-powered dev platform for creator widgets, focused on turning AI-processed SVG and Lottie assets into reusable interactive units through a pipeline-driven ingestion flow.",
+      "challenge": "The product needs a massive library of creator-ready widgets, but building each widget manually would be slow, repetitive, and hard to scale. The platform has to ingest generated visual assets, normalize them, preserve interaction metadata, and keep the workflow flexible while the product direction is still evolving.",
+      "outcome": "Owning the platform architecture and full-stack implementation for a pipeline that reduces manual widget-building effort, supports repeatable asset processing, and gives the team a faster path from AI-generated visual material to usable creator tooling.",
       "stack": [
         "Founding engineering",
-        "Creator tooling",
+        "AI-powered dev platform",
+        "SVG ingestion",
+        "Lottie ingestion",
+        "Pipeline architecture",
         "Product architecture",
         "Full-stack systems"
+      ]
+    },
+    {
+      "name": "Ledger Lens local-first finance explainer",
+      "client": "Public GitHub",
+      "role": "Builder",
+      "year": "Public project",
+      "theme": "Privacy-first AI tooling",
+      "summary": "Built a local-first personal finance explainer that ingests CSV and text-based PDF bank statements, sanitizes private transaction text, embeds evidence locally, and stores transaction context in LanceDB.",
+      "challenge": "Raw bank data is sensitive, so the project avoids sending original statement text to external models. Financial facts are computed deterministically, while retrieval and optional LLM layers are limited to explaining sanitized evidence.",
+      "outcome": "Created a Python CLI flow for statement ingestion, local transaction records, deterministic spending patterns, evidence retrieval, and a clear privacy boundary before any external LLM explanation is introduced.",
+      "stack": [
+        "Python",
+        "LanceDB",
+        "Local embeddings",
+        "PDF ingestion",
+        "CSV ingestion",
+        "Deterministic analysis"
+      ]
+    },
+    {
+      "name": "India Stock Discovery Agent",
+      "client": "Public GitHub",
+      "role": "Builder",
+      "year": "Public project",
+      "theme": "Financial research tooling",
+      "summary": "Adapted the xai_finance_agent starter into a trust-first Indian equity research app for building an investor profile, applying suitability guardrails, discovering stocks to research, and journaling decisions.",
+      "challenge": "The app needed to support research without drifting into buy/sell recommendations, so risk controls and suitability labels had to come from deterministic application logic rather than prompt-only behavior.",
+      "outcome": "Built a FastAPI backend and Vite React frontend with investor-profile capture, native Python guardrails, Indian stock research candidates, and a local decision journal for watchlist, skipped, and bought ideas.",
+      "stack": [
+        "Python",
+        "FastAPI",
+        "React",
+        "TypeScript",
+        "Suitability guardrails",
+        "Decision journaling"
+      ]
+    },
+    {
+      "name": "Satsang Lekhan Hindi transcription PWA",
+      "client": "Public GitHub",
+      "role": "Builder",
+      "year": "Public project",
+      "theme": "Language and speech tooling",
+      "summary": "Built a progressive web app for long-form Hindi speech-to-text during satsang and similar spoken sessions, using browser audio capture, Firebase Cloud Functions, and Bhashini ASR.",
+      "challenge": "The product needed to work for long spoken sessions on mobile, keep chapters editable and synced per family member, and handle Hindi dictation conventions such as spoken punctuation and paragraph commands.",
+      "outcome": "Delivered an installable React PWA with automatic audio chunking, WebM-to-WAV conversion, Bhashini transcription, Google sign-in, Firestore chapter sync, local autosave, copy, print, export, and per-user security rules.",
+      "stack": [
+        "React",
+        "Vite",
+        "Firebase",
+        "Firestore",
+        "Cloud Functions",
+        "Bhashini ASR",
+        "PWA"
       ]
     },
     {
@@ -144,21 +201,6 @@
         "Whisper",
         "Tavily"
       ]
-    },
-    {
-      "name": "Race data modelling for motorsport operations",
-      "client": "Clearroute / United Autosports",
-      "role": "Contractor IC",
-      "year": "Contract build",
-      "theme": "Operational systems",
-      "summary": "Contributed to a race data management platform for Le Mans racing operations, where teams need clean data flows, reliable views, and fast-moving operational tooling.",
-      "challenge": "The hard part was not only speed. Valuable race information lived in loose Excel sheets with extremely unstructured, nuanced data, so it needed careful modelling before it could support retrieval or analysis.",
-      "outcome": "Built and improved platform capabilities as an individual contributor, turning messy operational data into more usable flows for search, analysis, and production-ready delivery.",
-      "stack": [
-        "Full-stack engineering",
-        "Data workflows",
-        "Operational tooling"
-      ]
     }
   ],
   "experience": [
@@ -170,14 +212,19 @@
       "period": "2026 - Present",
       "location": "Remote",
       "context": "Creator economy product engineering",
-      "description": "Building early product infrastructure for live streamers and content creators, with ownership across product decisions, architecture, backend systems, frontend workflows, and integrations.",
+      "description": "Building an AI-powered dev platform and product infrastructure for live streamers and content creators, with ownership across product decisions, architecture, backend systems, frontend workflows, and integrations.",
       "highlights": [
+        "Developing a pipeline-driven ingestion flow for AI-processed SVG and Lottie widgets to reduce the manual effort of building a large creator widget library.",
         "Turning ambiguous creator workflows into product surfaces that can support live, high-pressure usage.",
         "Owning full-stack implementation while keeping the architecture flexible enough for rapid early-stage iteration.",
         "Working close to product direction and founder priorities to move from idea to usable creator tooling quickly."
       ],
       "stack": [
         "Founding engineering",
+        "AI-powered dev platform",
+        "SVG",
+        "Lottie",
+        "Pipeline architecture",
         "Full-stack systems",
         "Product architecture",
         "Creator tooling"
@@ -315,23 +362,46 @@
   "github": [
     {
       "name": "india-stock-discovery-agent",
-      "description": "AI stock discovery agent using Agno, Grok, YFinance, DuckDuckGo, and AgentOS.",
+      "description": "Trust-first Indian equity research app, adapted from xai_finance_agent, with investor profiling, deterministic suitability guardrails, research candidates, and a local decision journal.",
       "url": "https://github.com/riyatilwani/india-stock-discovery-agent",
       "stack": [
         "Python",
-        "Agno",
-        "Grok",
-        "AgentOS"
+        "FastAPI",
+        "React",
+        "TypeScript"
       ]
     },
     {
-      "name": "bhashini",
-      "description": "Hindi writing and diction project built with Government of India Bhashini APIs.",
-      "url": "https://github.com/riyatilwani/bhashini",
+      "name": "satsang-lekhan",
+      "description": "Hindi long-form speech-to-text PWA using Bhashini ASR, Firebase Cloud Functions, Google sign-in, Firestore chapter sync, and installable mobile UI.",
+      "url": "https://github.com/riyatilwani/satsang-lekhan",
       "stack": [
-        "Bhashini APIs",
-        "Hindi language tooling",
-        "Speech and writing UX"
+        "React",
+        "Firebase",
+        "Bhashini ASR",
+        "PWA"
+      ]
+    },
+    {
+      "name": "ledger-lens",
+      "description": "Local-first personal finance explainer that parses statements, sanitizes transactions, stores evidence in LanceDB, and keeps raw bank data out of external model calls.",
+      "url": "https://github.com/riyatilwani/ledger-lens",
+      "stack": [
+        "Python",
+        "LanceDB",
+        "Local embeddings",
+        "RAG boundaries"
+      ]
+    },
+    {
+      "name": "rtil.fyi",
+      "description": "This public site and resume system, including structured content, admin editing, generated PDF resumes, and a private resume lab.",
+      "url": "https://github.com/riyatilwani/rtil.fyi",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "PDFKit",
+        "Neon"
       ]
     }
   ],

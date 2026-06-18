@@ -107,7 +107,7 @@ export default function AdminEditor({
             {[
               ["profile", "Profile"],
               ["experience", "Experience"],
-              ["projects", "Selected builds"],
+              ["projects", "Notable work"],
               ["services", "Services"],
               ["proof", "Proof"],
               ["resume", "Public Resume"]
@@ -207,7 +207,7 @@ export default function AdminEditor({
 
           {activeTab === "projects" ? (
             <Panel
-              title="Selected builds / case studies"
+              title="Notable work / case studies"
               action={
                 <button className="admin-button secondary" type="button" onClick={() => updateContent("projects", [...content.projects, emptyProject()])}>
                   Add case study
