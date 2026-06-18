@@ -1,0 +1,367 @@
+{
+  "concept": "dossier",
+  "profile": {
+    "name": "Riya Tilwani",
+    "domain": "rtil.fyi",
+    "title": "Senior full-stack engineer for backend-heavy products and AI workflows",
+    "location": "Remote",
+    "years": "8+ years",
+    "email": "riyatilwani95@gmail.com",
+    "summary": "I build product systems across backend, full-stack, AI workflows, and technical leadership for startup teams that need senior ownership from ambiguous idea to reliable software.",
+    "availability": "Open to remote startup consulting, fractional technical leadership, and senior contract work across backend-heavy products, AI workflows, and internal tools.",
+    "links": {
+      "github": "https://github.com/riyatilwani",
+      "linkedin": "https://www.linkedin.com/in/riyatilwani14/",
+      "upwork": "https://www.upwork.com/freelancers/riyat10"
+    }
+  },
+  "education": [
+    {
+      "school": "VIT Vellore",
+      "degree": "B.Tech, Information Technology",
+      "period": "2013 - 2017",
+      "details": [
+        "CGPA 8.9/10"
+      ]
+    }
+  ],
+  "credibility": [
+    "Stealth startup",
+    "Gryd.io",
+    "StockX",
+    "Ola Electric",
+    "Amadeus",
+    "Lumentis AI",
+    "Clearroute"
+  ],
+  "positioning": [
+    "Marketplace and checkout systems",
+    "AI product engineering",
+    "Backend and full-stack SaaS",
+    "Technical leadership for small teams"
+  ],
+  "services": [
+    {
+      "title": "AI product engineering",
+      "description": "Designing and shipping AI-backed product workflows where model output has to become reliable, editable, and useful inside a real business process.",
+      "proof": "Problem framing, data boundaries, evaluation loops, human review, reliability, and rollout"
+    },
+    {
+      "title": "Backend-heavy product work",
+      "description": "Owning APIs, databases, checkout flows, payment integrations, subscriptions, document generation, dashboards, and deployment pipelines.",
+      "proof": "Data modelling, API boundaries, queues, payments, observability, deployment, and scale"
+    },
+    {
+      "title": "Senior execution for startups",
+      "description": "Turning incomplete product direction into shippable systems, reviewing architecture, managing developers, and making pragmatic build decisions.",
+      "proof": "Architecture reviews, tradeoff calls, team coordination, delivery planning, and hands-on implementation"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Creator tooling for live digital experiences",
+      "client": "Stealth startup",
+      "role": "Founding engineer",
+      "year": "Current",
+      "theme": "Creator tooling",
+      "summary": "Building early product infrastructure for live streamers and content creators, with tools that support interactive branded experiences across live digital content.",
+      "challenge": "The product has to feel fast and lightweight while the direction is still being shaped. That means making architecture and workflow decisions that preserve room for iteration without turning early product code into throwaway work.",
+      "outcome": "Owning full-stack product engineering across architecture, backend systems, frontend workflows, integrations, and product tradeoffs so the startup can move quickly from founder insight to usable creator tooling.",
+      "stack": [
+        "Founding engineering",
+        "Creator tooling",
+        "Product architecture",
+        "Full-stack systems"
+      ]
+    },
+    {
+      "name": "Marketplace checkout and pricing services",
+      "client": "StockX",
+      "role": "Software engineer",
+      "year": "Full-time role",
+      "theme": "Marketplace systems",
+      "summary": "Worked on RESTful microservices powering checkout and pricing business logic for a global ecommerce marketplace with high traffic, regulatory constraints, and fraud-risk considerations.",
+      "challenge": "Marketplace systems have to stay reliable under peak demand while coordinating pricing, checkout, asynchronous messaging, compliance concerns, and deployment safety across multiple services.",
+      "outcome": "Owned development and upkeep across backend services using Golang, Node.js, Postgres, DynamoDB, Kafka, SQS, AWS, Kubernetes, CircleCI, Harness, and Datadog.",
+      "stack": [
+        "Golang",
+        "Node.js",
+        "PostgreSQL",
+        "DynamoDB",
+        "Kafka",
+        "AWS"
+      ]
+    },
+    {
+      "name": "Legal transcription SaaS with context-aware AI",
+      "client": "Lumentis AI",
+      "role": "Software developer",
+      "year": "Freelance build",
+      "theme": "AI SaaS",
+      "summary": "Built a subscription web app for a law firm to upload audio files and produce documents through a fine-tuned, context-aware speech-to-text workflow.",
+      "challenge": "The product needed legal-context accuracy, a smooth upload-to-document flow, subscription tiers, and cloud delivery without making operations heavy for the client.",
+      "outcome": "Delivered the SaaS workflow with Stripe subscriptions, React UI, Django backend, a fine-tuned Whisper flow for legal context, and AWS CloudFront distribution.",
+      "stack": [
+        "Django",
+        "React",
+        "Stripe",
+        "OpenAI API",
+        "AWS CloudFront"
+      ]
+    },
+    {
+      "name": "Business report automation with generated charts and PDFs",
+      "client": "Lumentis AI",
+      "role": "Software developer",
+      "year": "Freelance build",
+      "theme": "Document automation",
+      "summary": "Built a web app that turns user inputs and uploaded CSV files into customizable business reports with generated copy, charts, images, live previews, and PDF export.",
+      "challenge": "The system needed to combine creative generation with deterministic document production. Users needed template control and version history without losing the speed benefits of AI-generated drafts.",
+      "outcome": "Delivered a full-stack report builder using Grok AI for content, OpenAI for chart generation, MongoDB for versions, and Fileforge for PDF generation.",
+      "stack": [
+        "React",
+        "Node.js",
+        "OpenAI API",
+        "Grok",
+        "MongoDB",
+        "Fileforge"
+      ]
+    },
+    {
+      "name": "Enterprise assistant with self-hostable deployment",
+      "client": "Lumentis AI",
+      "role": "Software developer",
+      "year": "Freelance build",
+      "theme": "Enterprise AI",
+      "summary": "Built a self-hostable AI assistant for enterprise teams that needed data control, internal search, speech input, and code execution without depending on a single hosted vendor.",
+      "challenge": "The product had to feel like a modern assistant while staying deployable in controlled environments. The hard parts were model portability, data retention boundaries, real-time search, and safely turning assistant output into executable workflows.",
+      "outcome": "Delivered a Chainlit-based assistant with open-source LLM support, PostgreSQL-backed persistence, Tavily web search, Whisper speech-to-text, and LLM sandbox execution.",
+      "stack": [
+        "React",
+        "Python",
+        "PostgreSQL",
+        "Chainlit",
+        "Whisper",
+        "Tavily"
+      ]
+    },
+    {
+      "name": "Race data modelling for motorsport operations",
+      "client": "Clearroute / United Autosports",
+      "role": "Contractor IC",
+      "year": "Contract build",
+      "theme": "Operational systems",
+      "summary": "Contributed to a race data management platform for Le Mans racing operations, where teams need clean data flows, reliable views, and fast-moving operational tooling.",
+      "challenge": "The hard part was not only speed. Valuable race information lived in loose Excel sheets with extremely unstructured, nuanced data, so it needed careful modelling before it could support retrieval or analysis.",
+      "outcome": "Built and improved platform capabilities as an individual contributor, turning messy operational data into more usable flows for search, analysis, and production-ready delivery.",
+      "stack": [
+        "Full-stack engineering",
+        "Data workflows",
+        "Operational tooling"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Stealth startup",
+      "companyUrl": "",
+      "companyContext": "Creator tools startup · remote",
+      "role": "Founding engineer",
+      "period": "2026 - Present",
+      "location": "Remote",
+      "context": "Creator economy product engineering",
+      "description": "Building early product infrastructure for live streamers and content creators, with ownership across product decisions, architecture, backend systems, frontend workflows, and integrations.",
+      "highlights": [
+        "Turning ambiguous creator workflows into product surfaces that can support live, high-pressure usage.",
+        "Owning full-stack implementation while keeping the architecture flexible enough for rapid early-stage iteration.",
+        "Working close to product direction and founder priorities to move from idea to usable creator tooling quickly."
+      ],
+      "stack": [
+        "Founding engineering",
+        "Full-stack systems",
+        "Product architecture",
+        "Creator tooling"
+      ]
+    },
+    {
+      "company": "Gryd.io",
+      "companyUrl": "https://www.gryd.io/",
+      "companyContext": "US company · remote",
+      "role": "Fractional CTO",
+      "period": "Dec 2024 - Present",
+      "location": "Remote",
+      "context": "Startup product and technical leadership",
+      "description": "Leading development and delivery of core products with a focus on scalable, maintainable solutions while balancing hands-on engineering, DevOps ownership, and architecture decisions.",
+      "highlights": [
+        "Managing a small team of part-time developers and keeping execution efficient through lightweight processes.",
+        "Owning product architecture, backend systems, deployment pipelines, and hands-on delivery.",
+        "Experimenting with AI and automation workflows for client-facing product and operational needs."
+      ],
+      "stack": [
+        "Product architecture",
+        "Backend systems",
+        "DevOps",
+        "n8n",
+        "AI workflows"
+      ]
+    },
+    {
+      "company": "Lumentis AI",
+      "companyUrl": "https://lumentis.ai/",
+      "companyContext": "German AI company · remote",
+      "role": "Software developer",
+      "period": "Apr 2024 - Sep 2024",
+      "location": "Remote",
+      "context": "Freelance AI product development",
+      "description": "Built AI-first SaaS and enterprise applications across transcription, business report generation, and self-hostable conversational assistants.",
+      "highlights": [
+        "Shipped a subscription transcription product using a fine-tuned Whisper workflow and Stripe.",
+        "Built a business report generation app with generated content, charts, templates, live previews, version control, and PDF export.",
+        "Developed an enterprise AI assistant with Chainlit, open-source LLM support, Tavily search, Whisper input, and sandboxed code execution."
+      ],
+      "stack": [
+        "React",
+        "Node.js",
+        "Django",
+        "OpenAI API",
+        "Grok",
+        "Stripe"
+      ]
+    },
+    {
+      "company": "StockX",
+      "companyUrl": "https://stockx.com/",
+      "companyContext": "US marketplace · India engineering office",
+      "role": "Software engineer",
+      "period": "Jun 2021 - Oct 2023",
+      "location": "Hybrid",
+      "context": "Global marketplace engineering",
+      "description": "Worked on RESTful microservices powering checkout and pricing business logic for a global ecommerce marketplace.",
+      "highlights": [
+        "Led development and upkeep of services across checkout and pricing logic.",
+        "Managed deployments with CircleCI, Harness, Kubernetes, and AWS, with Datadog for performance and availability.",
+        "Built domain depth across marketplace operations, regulatory compliance, peak traffic performance, scalability, and fraud prevention."
+      ],
+      "stack": [
+        "Golang",
+        "Node.js",
+        "PostgreSQL",
+        "DynamoDB",
+        "Kafka",
+        "SQS",
+        "AWS"
+      ]
+    },
+    {
+      "company": "Ola Electric",
+      "companyUrl": "https://www.olaelectric.com/",
+      "companyContext": "Indian EV company",
+      "role": "Software engineer",
+      "period": "Nov 2019 - May 2021",
+      "location": "On-site",
+      "context": "High-scale mobility and EV product engineering",
+      "description": "Built customer-facing web and backend systems for Ola Electric, including payments, test-ride workflows, and service deployment.",
+      "highlights": [
+        "Led external contractors building Ola Electric's official website.",
+        "Integrated Adyen and PayU payment flows using React, Node.js, Java Spring Boot, and MySQL.",
+        "Built a Java Spring Boot test-ride service for scheduled and on-demand rides using MySQL and Scylla.",
+        "Conducted 50+ interviews and mentored new joiners for the web development team."
+      ],
+      "stack": [
+        "React",
+        "Node.js",
+        "Java Spring Boot",
+        "MySQL",
+        "Scylla",
+        "Azure"
+      ]
+    },
+    {
+      "company": "Amadeus Labs",
+      "companyUrl": "https://amadeus.com/",
+      "companyContext": "European travel technology company · India engineering office",
+      "role": "Software developer",
+      "period": "Nov 2017 - Oct 2019",
+      "location": "On-site",
+      "context": "Enterprise travel technology",
+      "description": "Developed and maintained internal web applications for scheduling and activation of production changes and software loads across the organization.",
+      "highlights": [
+        "Worked on enterprise web application development in a large European travel technology environment.",
+        "Built and maintained MEAN-stack workflows used for internal production-change coordination."
+      ],
+      "stack": [
+        "MongoDB",
+        "Express",
+        "Angular",
+        "Node.js",
+        "Java"
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Riya has been an incredible asset to our team, seamlessly managing projects while contributing to both front-end and back-end development. Her proactive approach and ability to 'just get things done' set her apart from others we've worked with. Riya's technical expertise, combined with her sharp project management skills, ensured that everything ran smoothly and ahead of schedule.",
+      "author": "Josh G.",
+      "role": "CEO",
+      "date": "Jan 2025"
+    },
+    {
+      "quote": "Riya is an exceptional full stack developer who consistently impresses us. Her expertise spans front-end, back-end, and database management, allowing her to handle entire projects independently. Riya's work quality is consistently top-notch, delivering high-quality code throughout the application.",
+      "author": "Kevin K.",
+      "role": "CEO",
+      "date": "Sep 2024"
+    }
+  ],
+  "github": [
+    {
+      "name": "india-stock-discovery-agent",
+      "description": "AI stock discovery agent using Agno, Grok, YFinance, DuckDuckGo, and AgentOS.",
+      "url": "https://github.com/riyatilwani/india-stock-discovery-agent",
+      "stack": [
+        "Python",
+        "Agno",
+        "Grok",
+        "AgentOS"
+      ]
+    },
+    {
+      "name": "bhashini",
+      "description": "Hindi writing and diction project built with Government of India Bhashini APIs.",
+      "url": "https://github.com/riyatilwani/bhashini",
+      "stack": [
+        "Bhashini APIs",
+        "Hindi language tooling",
+        "Speech and writing UX"
+      ]
+    }
+  ],
+  "openTo": [
+    "Remote senior contract engineering for startups",
+    "Fractional CTO or technical leadership for small teams",
+    "Backend-heavy SaaS, marketplace, and internal product systems",
+    "AI workflow automation and production integrations",
+    "Technical consultation for architecture, delivery, and hiring"
+  ],
+  "resumeLab": {
+    "summary": "A private resume workspace that stores experience, project evidence, skills, testimonials, and role preferences so each application can produce a crisp ATS-friendly resume.",
+    "principles": [
+      "One clean layout, many tailored versions",
+      "Role-aware project and skill emphasis",
+      "ATS-friendly PDF export",
+      "Human-editable before sending"
+    ],
+    "resumeTips": [
+      "Make the first third of the resume answer level, domain, and current value.",
+      "Use a simple one-column structure with standard section names.",
+      "Put the newest and strongest experience first, with enough context to show seniority.",
+      "Write bullets as action, scope, and business or technical relevance.",
+      "Use firm verbs such as owned, led, built, shipped, designed, integrated, and managed.",
+      "Avoid vague claims unless there is evidence attached to the same line.",
+      "Keep skills grouped by capability instead of dumping every tool into one list.",
+      "Use exact keywords recruiters search for, but only where the experience supports them.",
+      "Keep links clean: email, LinkedIn, GitHub, and a portfolio domain are enough.",
+      "Make the PDF text-selectable and avoid graphics, tables, photos, keyword-stuffing sections, and complex layouts."
+    ],
+    "publicResumeConcept": "classic"
+  }
+}
