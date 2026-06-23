@@ -318,12 +318,12 @@ function EditableSkillGroups({ resume, onChange }: { resume: TailoredResume; onC
             </label>
             <label className="field">
               <span>Items</span>
-              <textarea
-                value={group.items.join("\n")}
-                onChange={(event) =>
+              <LineListTextarea
+                values={group.items}
+                onChange={(items) =>
                   onChange((current) => ({
                     ...current,
-                    skills: current.skills.map((item, itemIndex) => (itemIndex === index ? { ...item, items: splitLineList(event.target.value) } : item))
+                    skills: current.skills.map((item, itemIndex) => (itemIndex === index ? { ...item, items } : item))
                   }))
                 }
               />
@@ -365,7 +365,7 @@ function EditableExperience({ resume, onChange }: { resume: TailoredResume; onCh
           </div>
           <label className="field">
             <span>Bullets</span>
-            <textarea value={item.bullets.join("\n")} onChange={(event) => updateExperienceField(onChange, index, "bullets", splitLineList(event.target.value))} />
+            <LineListTextarea values={item.bullets} onChange={(bullets) => updateExperienceField(onChange, index, "bullets", bullets)} />
           </label>
         </div>
       ))}
@@ -391,7 +391,7 @@ function EditableProjects({ resume, onChange }: { resume: TailoredResume; onChan
           </div>
           <label className="field">
             <span>Bullets</span>
-            <textarea value={item.bullets.join("\n")} onChange={(event) => updateProjectField(onChange, index, "bullets", splitLineList(event.target.value))} />
+            <LineListTextarea values={item.bullets} onChange={(bullets) => updateProjectField(onChange, index, "bullets", bullets)} />
           </label>
         </div>
       ))}
@@ -437,7 +437,7 @@ function EditableEducation({ resume, onChange }: { resume: TailoredResume; onCha
           </div>
           <label className="field">
             <span>Details</span>
-            <textarea value={item.details.join("\n")} onChange={(event) => updateEducationField(onChange, index, "details", splitLineList(event.target.value))} />
+            <LineListTextarea values={item.details} onChange={(details) => updateEducationField(onChange, index, "details", details)} />
           </label>
         </div>
       ))}
@@ -456,6 +456,26 @@ function TagList({ items }: { items: string[] }) {
         <span key={item}>{item}</span>
       ))}
     </div>
+  );
+}
+
+function LineListTextarea({ values, onChange }: { values: string[]; onChange: (value: string[]) => void }) {
+  const serialized = values.join("\n");
+  const [draft, setDraft] = useState(serialized);
+
+  useEffect(() => {
+    setDraft(serialized);
+  }, [serialized]);
+
+  return (
+    <textarea
+      value={draft}
+      onChange={(event) => {
+        const value = event.target.value;
+        setDraft(value);
+        onChange(splitLineList(value));
+      }}
+    />
   );
 }
 

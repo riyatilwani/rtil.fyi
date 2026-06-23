@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type { SiteContent } from "@/lib/content";
 import { createDefaultPublicResume, resumeEdgeChecklist } from "@/lib/public-resume";
@@ -381,8 +381,28 @@ function TagTextarea({ label, values, onChange }: { label: string; values: strin
   return (
     <label className="field">
       <span>{label} <small>one per line</small></span>
-      <textarea value={values.join("\n")} onChange={(event) => onChange(lines(event.target.value))} />
+      <LineListTextarea values={values} onChange={onChange} />
     </label>
+  );
+}
+
+function LineListTextarea({ values, onChange }: { values: string[]; onChange: (value: string[]) => void }) {
+  const serialized = values.join("\n");
+  const [draft, setDraft] = useState(serialized);
+
+  useEffect(() => {
+    setDraft(serialized);
+  }, [serialized]);
+
+  return (
+    <textarea
+      value={draft}
+      onChange={(event) => {
+        const value = event.target.value;
+        setDraft(value);
+        onChange(lines(value));
+      }}
+    />
   );
 }
 
