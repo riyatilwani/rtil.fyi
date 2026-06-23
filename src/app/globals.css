@@ -1345,8 +1345,8 @@ figcaption {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
   margin-bottom: 18px;
 }
 
@@ -1414,7 +1414,7 @@ figcaption {
 .admin-inline-actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 10px;
   min-width: 0;
 }
@@ -1659,15 +1659,10 @@ figcaption {
   }
 
   .lab-panel-head,
-  .editor-toolbar,
   .editor-actions,
   .resume-actions {
     align-items: stretch;
     flex-direction: column;
-  }
-
-  .admin-inline-actions {
-    justify-content: flex-start;
   }
 
   .lab-status {
