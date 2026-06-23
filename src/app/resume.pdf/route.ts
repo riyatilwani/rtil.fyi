@@ -80,7 +80,7 @@ async function renderResumePdf(resume: TailoredResume, theme: PdfTheme) {
   if (resume.projects.length) {
     writeSection(doc, "Projects", theme);
     resume.projects.forEach((item) => {
-      entryHead(doc, item.name, item.context);
+      projectEntryHead(doc, item.name, item.context);
       bullets(doc, item.bullets);
     });
   }
@@ -165,6 +165,19 @@ function entryHead(doc: PDFKit.PDFDocument, title: string, meta: string, link?: 
   });
   doc.y = Math.max(doc.y, y + 15);
   doc.x = page.margin;
+}
+
+function projectEntryHead(doc: PDFKit.PDFDocument, title: string, meta: string) {
+  ensureRoom(doc, 42);
+  doc.font(fontName).fontSize(10.5).fillColor("#111111").text(title, page.margin, doc.y, {
+    width: page.width - page.margin * 2,
+    lineGap: 1.2
+  });
+  doc.font(fontName).fontSize(9.1).fillColor("#555555").text(meta, page.margin, doc.y, {
+    width: page.width - page.margin * 2,
+    lineGap: 1
+  });
+  doc.moveDown(0.2);
 }
 
 function bullets(doc: PDFKit.PDFDocument, items: string[]) {

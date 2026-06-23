@@ -1350,6 +1350,10 @@ figcaption {
   margin-bottom: 18px;
 }
 
+.editor-toolbar h1 {
+  min-width: 0;
+}
+
 .admin-form-panel {
   padding: 24px;
 }
@@ -1412,6 +1416,7 @@ figcaption {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px;
+  min-width: 0;
 }
 
 .concept-grid {
@@ -1595,6 +1600,7 @@ figcaption {
   background: var(--paper);
   color: #211f1b;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .admin-button.secondary {
@@ -1653,10 +1659,15 @@ figcaption {
   }
 
   .lab-panel-head,
+  .editor-toolbar,
   .editor-actions,
   .resume-actions {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .admin-inline-actions {
+    justify-content: flex-start;
   }
 
   .lab-status {
