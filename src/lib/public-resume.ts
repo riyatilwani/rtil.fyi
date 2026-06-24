@@ -70,18 +70,140 @@ export const recruiterKeywords = [
   "Local-first RAG",
   "LanceDB",
   "Bhashini ASR",
+  "Whisper",
+  "OpenAI API",
+  "Grok",
   "SVG ingestion",
   "Lottie ingestion",
-  "Creator tooling"
+  "Creator tooling",
+  "CSV ingestion",
+  "PDF ingestion",
+  "Document automation",
+  "Report generation",
+  "Python",
+  "Java",
+  "Express",
+  "Angular",
+  "MongoDB",
+  "MySQL",
+  "Scylla",
+  "Neon",
+  "Stripe",
+  "Adyen",
+  "PayU",
+  "CloudFront",
+  "Cloud Functions",
+  "Firestore",
+  "Jenkins",
+  "CircleCI",
+  "Harness",
+  "Marathon",
+  "Mesos",
+  "n8n"
+];
+
+export const publicResumeSkillGroups = [
+  {
+    title: "Backend, data, and product systems",
+    items: [
+      "System design",
+      "Backend architecture",
+      "REST APIs",
+      "Microservices",
+      "Data modeling",
+      "PostgreSQL",
+      "MySQL",
+      "DynamoDB",
+      "MongoDB",
+      "Scylla",
+      "Kafka",
+      "SQS",
+      "Checkout",
+      "Payments",
+      "Stripe",
+      "Adyen",
+      "PayU",
+      "Subscriptions"
+    ]
+  },
+  {
+    title: "AI, data ingestion, and workflow automation",
+    items: [
+      "AI product workflows",
+      "LLM integrations",
+      "OpenAI API",
+      "Grok",
+      "Whisper",
+      "Bhashini ASR",
+      "Local-first RAG",
+      "LanceDB",
+      "Local embeddings",
+      "SVG and Lottie ingestion",
+      "CSV/PDF ingestion",
+      "Report generation",
+      "Document automation",
+      "n8n"
+    ]
+  },
+  {
+    title: "Full-stack languages and frameworks",
+    items: [
+      "React",
+      "Next.js",
+      "Vite",
+      "TypeScript",
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "Django",
+      "FastAPI",
+      "Python",
+      "Golang",
+      "Java",
+      "Java Spring Boot",
+      "Angular"
+    ]
+  },
+  {
+    title: "Cloud, DevOps, and technical leadership",
+    items: [
+      "AWS",
+      "CloudFront",
+      "Azure",
+      "Firebase",
+      "Firestore",
+      "Cloud Functions",
+      "Kubernetes",
+      "Jenkins",
+      "CircleCI",
+      "Harness",
+      "Datadog",
+      "Marathon",
+      "Mesos",
+      "Neon",
+      "Founding engineering",
+      "Fractional CTO",
+      "Product architecture",
+      "DevOps ownership",
+      "Developer management",
+      "Hiring and interviewing",
+      "Architecture reviews",
+      "Delivery ownership",
+      "Stakeholder tradeoffs"
+    ]
+  }
 ];
 
 export function normalizePublicResume(resume: TailoredResume): TailoredResume {
   const staleSummary = !resume.summary || resume.summary.includes("marketplace systems, mobility") || resume.summary.includes("What is mobility");
+  const skillItems = resume.skills.flatMap((group) => group.items);
+  const staleSkills = !skillItems.includes("OpenAI API") || !skillItems.includes("MySQL") || !skillItems.includes("Jenkins");
 
   return {
     ...resume,
     headline: !resume.headline || resume.headline.includes("Backend Systems, AI Product Workflows") ? publicResumeHeadline : resume.headline,
     summary: staleSummary ? publicResumeSummary : resume.summary,
+    skills: staleSkills ? publicResumeSkillGroups : resume.skills,
     keywords: Array.from(new Set([...(resume.keywords ?? []), ...recruiterKeywords]))
   };
 }
@@ -101,28 +223,7 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
     },
     headline: publicResumeHeadline,
     summary: publicResumeSummary,
-    skills: [
-      {
-        title: "Backend and product systems",
-        items: ["Backend architecture", "REST APIs", "Microservices", "Data modelling", "PostgreSQL", "DynamoDB", "Kafka", "SQS", "Payments", "Subscriptions"]
-      },
-      {
-        title: "AI and workflow automation",
-        items: ["AI product workflows", "LLM integrations", "SVG and Lottie ingestion", "Local-first RAG", "Bhashini ASR", "Context-aware transcription", "Report generation", "Workflow automation"]
-      },
-      {
-        title: "Full-stack implementation",
-        items: ["React", "Node.js", "Django", "FastAPI", "Golang", "Java Spring Boot", "TypeScript", "JavaScript", "MongoDB"]
-      },
-      {
-        title: "Technical leadership",
-        items: ["Technical direction", "Product architecture", "DevOps ownership", "Developer management", "Hiring and interviewing", "Delivery ownership", "Stakeholder tradeoffs"]
-      },
-      {
-        title: "Cloud and operations",
-        items: ["AWS", "Kubernetes", "CircleCI", "Harness", "Datadog", "Stripe", "Azure", "CloudFront", "Firebase"]
-      }
-    ],
+    skills: publicResumeSkillGroups,
     experience: [
       {
         company: "Stealth startup",
