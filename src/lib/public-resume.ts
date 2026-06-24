@@ -15,7 +15,75 @@ export const resumeEdgeChecklist = [
 ];
 
 export function getPublicResume(content: SiteContent): TailoredResume {
-  return content.resumeLab.publicResume ?? createDefaultPublicResume(content);
+  return normalizePublicResume(content.resumeLab.publicResume ?? createDefaultPublicResume(content));
+}
+
+export const publicResumeHeadline = "Senior Full-Stack / Backend Platform Engineer | AI Products, Payments, DevOps, Technical Leadership";
+
+export const publicResumeSummary =
+  "Senior full-stack and backend platform engineer with 8+ years building marketplace systems, ecommerce checkout and payments, EV customer platforms, travel technology, AI SaaS, and startup products. Owns ambiguous backend-heavy work end to end: system design, REST APIs, microservices, data modeling, integrations, cloud deployments, DevOps, observability, and production delivery. Currently a founding engineer building an AI-powered creator tooling platform for SVG and Lottie widget ingestion, and a fractional CTO leading product architecture, developer execution, AI workflow automation, and release ownership for startup teams.";
+
+export const recruiterKeywords = [
+  "Senior full-stack engineer",
+  "Backend platform engineer",
+  "System design",
+  "Backend architecture",
+  "Product engineering",
+  "AI products",
+  "AI workflows",
+  "LLM integrations",
+  "Workflow automation",
+  "Technical leadership",
+  "Fractional CTO",
+  "Founding engineer",
+  "Startup engineering",
+  "SaaS",
+  "Marketplace systems",
+  "Ecommerce",
+  "Checkout",
+  "Payments",
+  "Payment integrations",
+  "REST APIs",
+  "Microservices",
+  "Data modeling",
+  "Data modelling",
+  "PostgreSQL",
+  "DynamoDB",
+  "Kafka",
+  "SQS",
+  "AWS",
+  "Kubernetes",
+  "CI/CD",
+  "DevOps",
+  "Observability",
+  "Datadog",
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Node.js",
+  "FastAPI",
+  "Django",
+  "Golang",
+  "Java Spring Boot",
+  "Firebase",
+  "PWA",
+  "Local-first RAG",
+  "LanceDB",
+  "Bhashini ASR",
+  "SVG ingestion",
+  "Lottie ingestion",
+  "Creator tooling"
+];
+
+export function normalizePublicResume(resume: TailoredResume): TailoredResume {
+  const staleSummary = !resume.summary || resume.summary.includes("marketplace systems, mobility") || resume.summary.includes("What is mobility");
+
+  return {
+    ...resume,
+    headline: !resume.headline || resume.headline.includes("Backend Systems, AI Product Workflows") ? publicResumeHeadline : resume.headline,
+    summary: staleSummary ? publicResumeSummary : resume.summary,
+    keywords: Array.from(new Set([...(resume.keywords ?? []), ...recruiterKeywords]))
+  };
 }
 
 export function createDefaultPublicResume(content: SiteContent): TailoredResume {
@@ -31,9 +99,8 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
         { label: "GitHub", url: content.profile.links.github }
       ]
     },
-    headline: "Senior Full-Stack Engineer | Backend Systems, AI Product Workflows, Technical Leadership",
-    summary:
-      "Senior full-stack engineer with 8+ years across marketplace systems, mobility, travel technology, AI products, and startup product engineering. Owns ambiguous backend-heavy work end to end: architecture, APIs, data modelling, integrations, deployments, and pragmatic delivery. Currently a founding engineer building an AI-powered creator tooling dev platform and a fractional CTO leading product architecture, developer execution, DevOps, and AI workflow experiments for startup teams.",
+    headline: publicResumeHeadline,
+    summary: publicResumeSummary,
     skills: [
       {
         title: "Backend and product systems",
@@ -172,40 +239,7 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
       }
     ],
     education: content.education,
-    keywords: [
-      "Senior full-stack engineer",
-      "Backend architecture",
-      "Product engineering",
-      "AI workflows",
-      "LLM integrations",
-      "Local-first RAG",
-      "LanceDB",
-      "FastAPI",
-      "Bhashini ASR",
-      "Firebase",
-      "PWA",
-      "SVG ingestion",
-      "Lottie ingestion",
-      "Creator tooling",
-      "Microservices",
-      "REST APIs",
-      "Data modelling",
-      "PostgreSQL",
-      "Golang",
-      "Node.js",
-      "React",
-      "Django",
-      "AWS",
-      "Kubernetes",
-      "Kafka",
-      "SQS",
-      "Stripe",
-      "DevOps",
-      "Technical leadership",
-      "Marketplace systems",
-      "Payments",
-      "Startup engineering"
-    ],
+    keywords: recruiterKeywords,
     notes: []
   };
 }

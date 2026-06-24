@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type { SiteContent } from "@/lib/content";
-import { createDefaultPublicResume, resumeEdgeChecklist } from "@/lib/public-resume";
+import { createDefaultPublicResume, normalizePublicResume, resumeEdgeChecklist } from "@/lib/public-resume";
 import { resumeConcepts, type ResumeConcept, type TailoredResume } from "@/lib/resume";
 
 type Concept = SiteContent["concept"];
@@ -37,7 +37,7 @@ export default function AdminEditor({
   const [content, setContent] = useState(initialContent);
   const [activeTab, setActiveTab] = useState<Tab>("profile");
   const [status, setStatus] = useState("Ready");
-  const publicResume = content.resumeLab.publicResume ?? createDefaultPublicResume(content);
+  const publicResume = normalizePublicResume(content.resumeLab.publicResume ?? createDefaultPublicResume(content));
   const publicResumeConcept = content.resumeLab.publicResumeConcept ?? "classic";
   const resumeTips = content.resumeLab.resumeTips ?? resumeEdgeChecklist;
   const rawJson = useMemo(() => JSON.stringify(content, null, 2), [content]);

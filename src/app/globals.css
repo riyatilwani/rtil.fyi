@@ -1343,18 +1343,22 @@ figcaption {
 
 .editor-toolbar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-wrap: nowrap;
+  gap: 18px;
   align-items: flex-start;
-  flex-direction: column;
+  justify-content: space-between;
   margin-bottom: 18px;
 }
 
 .editor-toolbar h1 {
+  flex: 1 1 auto;
   min-width: 0;
+  font-size: clamp(30px, 3cqw, 42px);
+  line-height: 1.05;
 }
 
 .admin-form-panel {
+  container-type: inline-size;
   padding: 24px;
 }
 
@@ -1412,9 +1416,10 @@ figcaption {
 }
 
 .admin-inline-actions {
+  flex: 0 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: flex-end;
   gap: 10px;
   min-width: 0;
 }
@@ -1593,6 +1598,9 @@ figcaption {
 }
 
 .admin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 42px;
   padding: 0 16px;
   border: 1px solid rgba(247, 242, 232, 0.72);
@@ -1600,12 +1608,24 @@ figcaption {
   background: var(--paper);
   color: #211f1b;
   cursor: pointer;
+  line-height: 1;
+  text-align: center;
   white-space: nowrap;
 }
 
 .admin-button.secondary {
   background: transparent;
   color: var(--paper);
+}
+
+@container (max-width: 860px) {
+  .editor-toolbar {
+    flex-direction: column;
+  }
+
+  .admin-inline-actions {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 860px) {

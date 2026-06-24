@@ -75,7 +75,7 @@ export default async function Home() {
               <span>
                 <Route size={14} aria-hidden /> Track
               </span>
-              <strong>{content.profile.years} across marketplaces, mobility, travel tech, AI products, and startup systems.</strong>
+              <strong>{content.profile.years} across marketplaces, EV product systems, travel tech, AI products, and startup systems.</strong>
             </div>
             <div className="proof-row">
               <span>
@@ -112,7 +112,7 @@ export default async function Home() {
       <section className="section" id="experience">
         <SectionHead
           label="Experience"
-          title="A full-time foundation across marketplaces, mobility, travel tech, AI products, and startups."
+          title="A full-time foundation across marketplaces, EV product systems, travel tech, AI products, and startups."
           intro="A chronological view of the roles behind the work: global marketplace systems, payments, travel technology, fractional leadership, and recent AI/product builds."
         />
         <div className="experience-list">
