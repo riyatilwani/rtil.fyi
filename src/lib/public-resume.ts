@@ -15,7 +15,8 @@ export const resumeEdgeChecklist = [
 ];
 
 export function getPublicResume(content: SiteContent): TailoredResume {
-  return normalizePublicResume(content.resumeLab.publicResume ?? createDefaultPublicResume(content));
+  const defaultResume = createDefaultPublicResume(content);
+  return normalizePublicResume(content.resumeLab.publicResume ?? defaultResume, defaultResume);
 }
 
 export const publicResumeHeadline = "Senior Full-Stack / Backend Platform Engineer | AI Products, Payments, DevOps, Technical Leadership";
@@ -194,16 +195,17 @@ export const publicResumeSkillGroups = [
   }
 ];
 
-export function normalizePublicResume(resume: TailoredResume): TailoredResume {
-  const staleSummary = !resume.summary || resume.summary.includes("marketplace systems, mobility") || resume.summary.includes("What is mobility");
-  const skillItems = resume.skills.flatMap((group) => group.items);
-  const staleSkills = !skillItems.includes("OpenAI API") || !skillItems.includes("MySQL") || !skillItems.includes("Jenkins");
+export function normalizePublicResume(resume: TailoredResume, defaultResume?: TailoredResume): TailoredResume {
+  const staleSummary = !resume.summary || resume.summary.includes("mobility") || resume.summary.includes("What is mobility");
 
   return {
     ...resume,
     headline: !resume.headline || resume.headline.includes("Backend Systems, AI Product Workflows") ? publicResumeHeadline : resume.headline,
     summary: staleSummary ? publicResumeSummary : resume.summary,
-    skills: staleSkills ? publicResumeSkillGroups : resume.skills,
+    skills: publicResumeSkillGroups,
+    experience: resume.experience.length ? resume.experience : (defaultResume?.experience ?? resume.experience),
+    projects: resume.projects.length ? resume.projects : (defaultResume?.projects ?? resume.projects),
+    education: resume.education.length ? resume.education : (defaultResume?.education ?? resume.education),
     keywords: Array.from(new Set([...(resume.keywords ?? []), ...recruiterKeywords]))
   };
 }
