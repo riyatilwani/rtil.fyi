@@ -289,7 +289,7 @@ export default function AdminEditor({
               action={
                 <div className="admin-inline-actions">
                   <a className="admin-button secondary" href="/resume.pdf" target="_blank" rel="noreferrer">
-                    Download ATS PDF
+                    Download public PDF
                   </a>
                   <a className="admin-button secondary" href="/resume-visual.pdf" target="_blank" rel="noreferrer">
                     Download visual PDF

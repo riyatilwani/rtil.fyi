@@ -115,7 +115,7 @@ function writeSecondPage(doc: PDFKit.PDFDocument, resume: TailoredResume) {
   doc.font(fontName).fontSize(13).fillColor(colors.ink).text(resume.profile.name.toUpperCase(), mainX, y, {
     characterSpacing: 2
   });
-  doc.fontSize(8.8).fillColor(colors.muted).text("Visual resume supplement - ATS-safe version remains available at /resume.pdf", mainX, y + 20);
+  doc.fontSize(8.8).fillColor(colors.muted).text("Senior full-stack and backend platform engineer", mainX, y + 20);
   y += 54;
 
   y = drawSectionTitle(doc, "Additional Experience", mainX, y, mainW);
