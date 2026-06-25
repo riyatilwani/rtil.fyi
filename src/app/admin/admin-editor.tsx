@@ -460,7 +460,7 @@ function EditableResumeExperience({ resume, onChange }: { resume: TailoredResume
 function EditableResumeProjects({ resume, onChange }: { resume: TailoredResume; onChange: (updater: (resume: TailoredResume) => TailoredResume) => void }) {
   return (
     <>
-      <h2 className="admin-subhead">Projects</h2>
+      <h2 className="admin-subhead">Notable work</h2>
       {resume.projects.map((item, index) => (
         <EditableBlock
           key={`${item.name}-${index}`}
@@ -473,7 +473,7 @@ function EditableResumeProjects({ resume, onChange }: { resume: TailoredResume; 
         </EditableBlock>
       ))}
       <button className="admin-button secondary" type="button" onClick={() => onChange((current) => ({ ...current, projects: [...current.projects, { name: "New project", context: "", bullets: [] }] }))}>
-        Add project
+        Add notable work
       </button>
     </>
   );

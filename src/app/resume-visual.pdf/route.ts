@@ -124,7 +124,7 @@ function writeSecondPage(doc: PDFKit.PDFDocument, resume: TailoredResume) {
   });
 
   y += 4;
-  y = drawSectionTitle(doc, "Projects", mainX, y, mainW);
+  y = drawSectionTitle(doc, "Notable Work", mainX, y, mainW);
   resume.projects.slice(0, 3).forEach((project) => {
     y = drawExperienceItem(doc, project.name, project.context, "", project.bullets.slice(0, 2), mainX, y, mainW);
   });

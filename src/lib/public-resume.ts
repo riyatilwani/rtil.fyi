@@ -195,6 +195,49 @@ export const publicResumeSkillGroups = [
   }
 ];
 
+export const publicResumeNotableWork = [
+  {
+    name: "StockX global marketplace backend systems",
+    context: "StockX | checkout, pricing, marketplace infrastructure",
+    bullets: [
+      "Built and operated checkout and pricing microservices for StockX's global marketplace, contributing to backend systems behind a platform that surpassed 50M+ lifetime trades, 15M+ buyers, and 1.7M sellers by 2023.",
+      "Worked across Go, Node.js, PostgreSQL, DynamoDB, Kafka, SQS, AWS, Kubernetes, CircleCI, Harness, and Datadog in a high-traffic marketplace environment with regulatory, fraud-risk, and peak-load constraints."
+    ]
+  },
+  {
+    name: "AI-first SaaS and enterprise products",
+    context: "Lumentis AI | legal, reporting, enterprise assistants",
+    bullets: [
+      "Shipped 3 AI-first SaaS and enterprise products in 6 months: legal transcription with Whisper, business report generation with AI-generated content, charts, and PDF export, and a self-hostable enterprise assistant.",
+      "Delivered product workflows involving open-source LLM support, search, speech input, persistence, sandboxed execution, Stripe subscriptions, React, Django, and CloudFront."
+    ]
+  },
+  {
+    name: "Fractional CTO and startup product architecture",
+    context: "Gryd.io | US startup | architecture and delivery",
+    bullets: [
+      "Lead architecture and delivery as Fractional CTO for a US startup, managing a small part-time engineering team while owning backend architecture, DevOps, Atlassian Marketplace apps, CRM and marketing automation, AI workflow prototyping, and production release tradeoffs.",
+      "Balance hands-on engineering with product architecture, developer execution, operational decisions, and stakeholder tradeoffs across fast-moving startup builds."
+    ]
+  },
+  {
+    name: "Ola Electric launch-period customer systems",
+    context: "Ola Electric | EV launch, payments, booking workflows",
+    bullets: [
+      "Built customer-facing web and backend systems during Ola Electric's high-demand EV launch period, including official website work, Adyen and PayU payments, and scheduled/on-demand test-ride workflows.",
+      "Contributed during a launch cycle that saw 100k+ bookings in 24 hours and about 500k first-month bookings, while working across React, Node.js, Java Spring Boot, MySQL, Jenkins, Marathon, Mesos, and Azure."
+    ]
+  },
+  {
+    name: "Personal AI and product systems",
+    context: "Ledger Lens, India Stock Discovery Agent, Satsang Lekhan",
+    bullets: [
+      "Built personal AI/product systems demonstrating privacy-first retrieval, deterministic guardrails, local embeddings, ASR pipelines, and full-stack product delivery.",
+      "Created Ledger Lens for local-first finance explanation, India Stock Discovery Agent for research workflows with suitability guardrails, and Satsang Lekhan for Hindi long-form speech-to-text with Bhashini ASR and Firebase."
+    ]
+  }
+];
+
 export function normalizePublicResume(resume: TailoredResume, defaultResume?: TailoredResume): TailoredResume {
   const staleSummary = !resume.summary || resume.summary.includes("mobility") || resume.summary.includes("What is mobility");
 
@@ -204,7 +247,7 @@ export function normalizePublicResume(resume: TailoredResume, defaultResume?: Ta
     summary: staleSummary ? publicResumeSummary : resume.summary,
     skills: publicResumeSkillGroups,
     experience: resume.experience.length ? resume.experience : (defaultResume?.experience ?? resume.experience),
-    projects: resume.projects.length ? resume.projects : (defaultResume?.projects ?? resume.projects),
+    projects: publicResumeNotableWork,
     education: resume.education.length ? resume.education : (defaultResume?.education ?? resume.education),
     keywords: Array.from(new Set([...(resume.keywords ?? []), ...recruiterKeywords]))
   };
@@ -300,47 +343,7 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
         ]
       }
     ],
-    projects: [
-      {
-        name: "AI-powered creator widget dev platform",
-        context: "Stealth startup | creator tooling",
-        bullets: [
-          "Developed a pipeline-oriented platform for ingesting AI-processed SVG and Lottie widget assets, normalizing them into reusable creator-facing components, and reducing repetitive manual build effort.",
-          "Owned product and technical tradeoffs across early architecture, backend workflows, frontend tooling, integrations, and iteration speed for a creator tools startup."
-        ]
-      },
-      {
-        name: "Business report automation",
-        context: "Lumentis AI | document automation",
-        bullets: [
-          "Built a report builder with AI-generated content, CSV-driven charts, template control, live previews, version history, and PDF export."
-        ]
-      },
-      {
-        name: "Ledger Lens local-first finance explainer",
-        context: "Public GitHub project | privacy-first finance tooling",
-        bullets: [
-          "Built a local-first Python finance explainer that ingests CSV and text-based PDF statements, sanitizes transaction text, embeds evidence locally, and stores retrieval context in LanceDB.",
-          "Designed the product boundary so deterministic code computes financial facts while retrieval and optional LLM layers explain only sanitized evidence."
-        ]
-      },
-      {
-        name: "India Stock Discovery Agent",
-        context: "Public GitHub project | financial research tooling",
-        bullets: [
-          "Built a FastAPI and React research app for investor profiling, deterministic suitability guardrails, Indian stock research candidates, and local decision journaling.",
-          "Kept risk controls in native Python application logic so the app supports research workflows without relying on prompt-only buy/sell safeguards."
-        ]
-      },
-      {
-        name: "Satsang Lekhan Hindi transcription PWA",
-        context: "Public GitHub project | Hindi speech-to-text and language tooling",
-        bullets: [
-          "Built a React and Firebase PWA for long-form Hindi speech-to-text, using browser recording, automatic audio chunking, Firebase Cloud Functions, Bhashini ASR, and Firestore chapter sync.",
-          "Added Google sign-in, per-user chapter storage, local autosave, spoken punctuation handling, copy, print, export, and installable mobile PWA behavior for family use."
-        ]
-      }
-    ],
+    projects: publicResumeNotableWork,
     education: content.education,
     keywords: recruiterKeywords,
     notes: []
