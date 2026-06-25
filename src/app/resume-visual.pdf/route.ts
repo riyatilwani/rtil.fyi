@@ -35,7 +35,9 @@ export async function GET() {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": 'attachment; filename="riya-tilwani-visual-resume.pdf"',
-      "Cache-Control": "no-store"
+      "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+      "Pragma": "no-cache",
+      "Expires": "0"
     }
   });
 }

@@ -239,18 +239,29 @@ export const publicResumeNotableWork = [
 ];
 
 export function normalizePublicResume(resume: TailoredResume, defaultResume?: TailoredResume): TailoredResume {
-  const staleSummary = !resume.summary || resume.summary.includes("mobility") || resume.summary.includes("What is mobility");
-
   return {
     ...resume,
-    headline: !resume.headline || resume.headline.includes("Backend Systems, AI Product Workflows") ? publicResumeHeadline : resume.headline,
-    summary: staleSummary ? publicResumeSummary : resume.summary,
-    skills: publicResumeSkillGroups,
-    experience: resume.experience.length ? resume.experience : (defaultResume?.experience ?? resume.experience),
-    projects: publicResumeNotableWork,
-    education: resume.education.length ? resume.education : (defaultResume?.education ?? resume.education),
-    keywords: Array.from(new Set([...(resume.keywords ?? []), ...recruiterKeywords]))
+    headline: shouldUsePublicResumeHeadline(resume.headline) ? publicResumeHeadline : resume.headline,
+    summary: shouldUsePublicResumeSummary(resume.summary) ? publicResumeSummary : resume.summary,
+    skills: arrayOr(resume.skills, defaultResume?.skills ?? publicResumeSkillGroups),
+    experience: arrayOr(resume.experience, defaultResume?.experience ?? []),
+    projects: arrayOr(resume.projects, defaultResume?.projects ?? publicResumeNotableWork),
+    education: arrayOr(resume.education, defaultResume?.education ?? []),
+    keywords: Array.from(new Set(arrayOr(resume.keywords, defaultResume?.keywords ?? recruiterKeywords))),
+    notes: arrayOr(resume.notes, defaultResume?.notes ?? [])
   };
+}
+
+function shouldUsePublicResumeHeadline(headline: string | undefined) {
+  return !headline || headline.includes("Backend Systems, AI Product Workflows");
+}
+
+function shouldUsePublicResumeSummary(summary: string | undefined) {
+  return !summary || summary.includes("What is mobility") || summary.startsWith("Senior full-stack engineer with 8+ years across marketplace systems, mobility");
+}
+
+function arrayOr<T>(value: T[] | undefined, fallback: T[]) {
+  return Array.isArray(value) ? value : fallback;
 }
 
 export function createDefaultPublicResume(content: SiteContent): TailoredResume {
