@@ -18,6 +18,7 @@ import {
   Wrench
 } from "lucide-react";
 import { getSiteContent } from "@/lib/content";
+import { siteNotableWork } from "@/lib/site-notable-work";
 
 const serviceIcons = [Bot, Database, GitBranch] as const;
 const positioningIcons = [Briefcase, Bot, Database, Route] as const;
@@ -157,11 +158,11 @@ export default async function Home() {
       <section className="section" id="work">
         <SectionHead
           label="Notable work"
-          title="Representative product and systems problems I have owned."
-          intro="A few deeper examples that show the kind of systems, product ambiguity, platform thinking, and AI workflows I can own beyond a role title."
+          title="Major systems, launches, and AI product work I have owned."
+          intro="Selected work across marketplace backend systems, AI SaaS delivery, startup technical leadership, EV launch systems, and current creator tooling."
         />
         <div className="case-list">
-          {content.projects.map((project, index) => {
+          {siteNotableWork.map((project, index) => {
             const Icon = caseIcons[index % caseIcons.length];
 
             return (
