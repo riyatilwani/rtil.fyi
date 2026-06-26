@@ -97,16 +97,8 @@ function writeFirstPage(doc: PDFKit.PDFDocument, resume: TailoredResume) {
     resume.profile.location,
     ...resume.profile.links.filter((link) => link.label !== "Portfolio").map((link) => link.url)
   ]);
-  sidebarY = drawSidebarSection(doc, "Summary", sidebarX, sidebarY + 14, sidebarW, [
-    "Senior full-stack and backend platform engineer with 8+ years across marketplace, payments, EV, travel, AI SaaS, and startup products.",
-    "Currently building AI-powered creator tooling as a founding engineer and leading startup architecture as a fractional CTO."
-  ]);
-  drawSidebarSection(doc, "Core Skills", sidebarX, sidebarY + 14, sidebarW, [
-    "Backend platforms, REST APIs, microservices, data modeling",
-    "React, Next.js, TypeScript, Node.js, FastAPI, Django",
-    "AI workflows, OpenAI API, Whisper, Bhashini ASR, RAG",
-    "AWS, Kubernetes, Firebase, CI/CD, DevOps"
-  ]);
+  sidebarY = drawSidebarSection(doc, "Summary", sidebarX, sidebarY + 14, sidebarW, sidebarSummary(resume));
+  drawSidebarSection(doc, "Core Skills", sidebarX, sidebarY + 14, sidebarW, sidebarSkills(resume));
 }
 
 function writeSecondPage(doc: PDFKit.PDFDocument, resume: TailoredResume) {
@@ -114,10 +106,10 @@ function writeSecondPage(doc: PDFKit.PDFDocument, resume: TailoredResume) {
   const mainW = page.width - page.margin * 2;
   let y = 48;
 
-  doc.font(fontName).fontSize(13).fillColor(colors.ink).text(resume.profile.name.toUpperCase(), mainX, y, {
-    characterSpacing: 2
+  doc.font(fontName).fontSize(13).fillColor(colors.ink).text(resume.profile.name, mainX, y, {
+    width: mainW
   });
-  doc.fontSize(8.8).fillColor(colors.muted).text("Senior full-stack and backend platform engineer", mainX, y + 20);
+  doc.fontSize(8.8).fillColor(colors.muted).text(resume.headline, mainX, y + 20, { width: mainW });
   y += 54;
 
   y = drawSectionTitle(doc, "Additional Experience", mainX, y, mainW);
@@ -126,8 +118,8 @@ function writeSecondPage(doc: PDFKit.PDFDocument, resume: TailoredResume) {
   });
 
   y += 4;
-  y = drawSectionTitle(doc, "Notable Work", mainX, y, mainW);
-  resume.projects.slice(0, 3).forEach((project) => {
+  y = drawSectionTitle(doc, "Selected Achievements", mainX, y, mainW);
+  resume.projects.slice(0, 4).forEach((project) => {
     y = drawExperienceItem(doc, project.name, project.context, "", project.bullets.slice(0, 2), mainX, y, mainW);
   });
 
@@ -140,8 +132,7 @@ function writeSecondPage(doc: PDFKit.PDFDocument, resume: TailoredResume) {
 }
 
 function drawHeader(doc: PDFKit.PDFDocument, resume: TailoredResume, x: number, y: number, width: number) {
-  doc.font(fontName).fontSize(25).fillColor(colors.ink).text(resume.profile.name.toUpperCase(), x, y, {
-    characterSpacing: 4,
+  doc.font(fontName).fontSize(24).fillColor(colors.ink).text(resume.profile.name, x, y, {
     width
   });
   doc.roundedRect(x, y + 54, width, 58, 12).fill(colors.paleAccent);
@@ -153,6 +144,17 @@ function drawHeader(doc: PDFKit.PDFDocument, resume: TailoredResume, x: number, 
       lineGap: 4,
       width: width - 32
     });
+}
+
+function sidebarSummary(resume: TailoredResume) {
+  return resume.summary
+    .split(". ")
+    .slice(0, 1)
+    .map((sentence) => (sentence.endsWith(".") ? sentence : `${sentence}.`));
+}
+
+function sidebarSkills(resume: TailoredResume) {
+  return resume.skills.slice(0, 4).map((group) => `${group.title}: ${group.items.slice(0, 5).join(", ")}`);
 }
 
 function drawSoftShapes(doc: PDFKit.PDFDocument) {

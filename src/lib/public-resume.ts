@@ -22,7 +22,7 @@ export function getPublicResume(content: SiteContent): TailoredResume {
 export const publicResumeHeadline = "Senior Full-Stack / Backend Platform Engineer | AI Products, Payments, DevOps, Technical Leadership";
 
 export const publicResumeSummary =
-  "Senior full-stack and backend platform engineer with 8+ years building marketplace systems, ecommerce checkout and payments, EV customer platforms, travel technology, AI SaaS, and startup products. Owns ambiguous backend-heavy work end to end: system design, REST APIs, microservices, data modeling, integrations, cloud deployments, DevOps, observability, and production delivery. Currently a founding engineer building an AI-powered creator tooling platform for SVG and Lottie widget ingestion, and a fractional CTO leading product architecture, developer execution, AI workflow automation, and release ownership for startup teams.";
+  "Senior full-stack and backend platform engineer with 8+ years delivering marketplace, payments, EV launch, travel technology, AI SaaS, and startup systems. Built checkout/pricing services for a marketplace that surpassed 50M lifetime trades, shipped 3 AI-first products in 6 months, integrated payment and booking workflows during a 100k+ reservation launch, and now leads zero-to-one architecture, DevOps, AI workflow automation, and engineering delivery as a founding engineer and fractional CTO.";
 
 export const recruiterKeywords = [
   "Senior full-stack engineer",
@@ -113,18 +113,14 @@ export const publicResumeSkillGroups = [
       "Microservices",
       "Data modeling",
       "PostgreSQL",
-      "MySQL",
       "DynamoDB",
-      "MongoDB",
-      "Scylla",
       "Kafka",
       "SQS",
       "Checkout",
       "Payments",
-      "Stripe",
       "Adyen",
       "PayU",
-      "Subscriptions"
+      "Stripe"
     ]
   },
   {
@@ -133,12 +129,8 @@ export const publicResumeSkillGroups = [
       "AI product workflows",
       "LLM integrations",
       "OpenAI API",
-      "Grok",
       "Whisper",
-      "Bhashini ASR",
-      "Local-first RAG",
-      "LanceDB",
-      "Local embeddings",
+      "RAG",
       "SVG and Lottie ingestion",
       "CSV/PDF ingestion",
       "Report generation",
@@ -151,89 +143,63 @@ export const publicResumeSkillGroups = [
     items: [
       "React",
       "Next.js",
-      "Vite",
       "TypeScript",
-      "JavaScript",
       "Node.js",
       "Express",
       "Django",
       "FastAPI",
       "Python",
-      "Golang",
-      "Java",
-      "Java Spring Boot",
-      "Angular"
+      "Go",
+      "Java Spring Boot"
     ]
   },
   {
     title: "Cloud, DevOps, and technical leadership",
     items: [
       "AWS",
-      "CloudFront",
       "Azure",
       "Firebase",
-      "Firestore",
       "Cloud Functions",
       "Kubernetes",
       "Jenkins",
       "CircleCI",
       "Harness",
       "Datadog",
-      "Marathon",
-      "Mesos",
-      "Neon",
-      "Founding engineering",
-      "Fractional CTO",
       "Product architecture",
       "DevOps ownership",
-      "Developer management",
-      "Hiring and interviewing",
-      "Architecture reviews",
-      "Delivery ownership",
-      "Stakeholder tradeoffs"
+      "Fractional CTO",
+      "Hiring and interviewing"
     ]
   }
 ];
 
 export const publicResumeNotableWork = [
   {
-    name: "StockX global marketplace backend systems",
+    name: "Marketplace scale and checkout reliability",
     context: "StockX | checkout, pricing, marketplace infrastructure",
     bullets: [
-      "Built and operated checkout and pricing microservices for StockX's global marketplace, contributing to backend systems behind a platform that surpassed 50M+ lifetime trades, 15M+ buyers, and 1.7M sellers by 2023.",
-      "Worked across Go, Node.js, PostgreSQL, DynamoDB, Kafka, SQS, AWS, Kubernetes, CircleCI, Harness, and Datadog in a high-traffic marketplace environment with regulatory, fraud-risk, and peak-load constraints."
+      "Built and operated checkout and pricing services for a global marketplace that surpassed 50M lifetime trades, 15M buyers, and 1.7M sellers by 2023, working across Go, Node.js, PostgreSQL, DynamoDB, Kafka, SQS, AWS, Kubernetes, CircleCI, Harness, and Datadog."
     ]
   },
   {
-    name: "AI-first SaaS and enterprise products",
+    name: "AI SaaS product shipping",
     context: "Lumentis AI | legal, reporting, enterprise assistants",
     bullets: [
-      "Shipped 3 AI-first SaaS and enterprise products in 6 months: legal transcription with Whisper, business report generation with AI-generated content, charts, and PDF export, and a self-hostable enterprise assistant.",
-      "Delivered product workflows involving open-source LLM support, search, speech input, persistence, sandboxed execution, Stripe subscriptions, React, Django, and CloudFront."
+      "Shipped 3 AI-first SaaS and enterprise products in 6 months, covering legal transcription with Whisper, business report generation with AI-generated content/charts/PDF export, and a self-hostable enterprise assistant with open-source LLM support."
     ]
   },
   {
-    name: "Fractional CTO and startup product architecture",
+    name: "Startup technical leadership",
     context: "Gryd.io | US startup | architecture and delivery",
     bullets: [
-      "Lead architecture and delivery as Fractional CTO for a US startup, managing a small part-time engineering team while owning backend architecture, DevOps, Atlassian Marketplace apps, CRM and marketing automation, AI workflow prototyping, and production release tradeoffs.",
-      "Balance hands-on engineering with product architecture, developer execution, operational decisions, and stakeholder tradeoffs across fast-moving startup builds."
+      "Lead architecture and delivery as fractional CTO for a US startup, managing a small part-time engineering team while owning backend architecture, DevOps, Atlassian Marketplace apps, CRM/marketing automation, AI workflow prototyping, and release tradeoffs."
     ]
   },
   {
-    name: "Ola Electric launch-period customer systems",
+    name: "EV launch customer systems",
     context: "Ola Electric | EV launch, payments, booking workflows",
     bullets: [
-      "Built customer-facing web and backend systems during Ola Electric's high-demand EV launch period, including official website work, Adyen and PayU payments, and scheduled/on-demand test-ride workflows.",
-      "Contributed during a launch cycle that saw 100k+ bookings in 24 hours and about 500k first-month bookings, while working across React, Node.js, Java Spring Boot, MySQL, Jenkins, Marathon, Mesos, and Azure."
-    ]
-  },
-  {
-    name: "Personal AI and product systems",
-    context: "Ledger Lens, India Stock Discovery Agent, Satsang Lekhan",
-    bullets: [
-      "Built personal AI/product systems demonstrating privacy-first retrieval, deterministic guardrails, local embeddings, ASR pipelines, and full-stack product delivery.",
-      "Created Ledger Lens for local-first finance explanation, India Stock Discovery Agent for research workflows with suitability guardrails, and Satsang Lekhan for Hindi long-form speech-to-text with Bhashini ASR and Firebase."
+      "Built customer-facing web, payment, and test-ride systems during Ola Electric's launch cycle, including Adyen and PayU integrations for a vehicle launch that reached 100k+ reservations in 24 hours and about 500k first-month bookings."
     ]
   }
 ];
@@ -270,7 +236,7 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
       name: content.profile.name,
       title: content.profile.title,
       email: content.profile.email,
-      location: content.profile.location,
+      location: content.profile.location || "Remote",
       links: [
         { label: "Portfolio", url: `https://${content.profile.domain}` },
         { label: "LinkedIn", url: content.profile.links.linkedin },
@@ -288,10 +254,9 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
         role: "Founding engineer",
         period: "2026 - Present",
         bullets: [
-          "Own early product engineering for live streamer and content creator tooling across architecture, backend systems, frontend workflows, integrations, and product tradeoffs.",
-          "Develop an AI-powered dev platform that ingests AI-processed SVG and Lottie widgets through a repeatable pipeline, reducing the manual effort required to build a large creator widget library.",
-          "Turn ambiguous creator workflows into product surfaces designed for live, high-pressure usage and rapid early-stage iteration.",
-          "Work close to founder priorities to move from product insight to usable creator tooling without overbuilding the first architecture."
+          "Own zero-to-one product engineering for live streamer and creator tooling across architecture, backend systems, frontend workflows, integrations, and release tradeoffs.",
+          "Architect an AI-powered widget ingestion platform that converts AI-processed SVG and Lottie assets into reusable creator-facing components, reducing repetitive manual build work for a large widget library.",
+          "Translate founder priorities and ambiguous creator workflows into production-ready surfaces for high-pressure live usage."
         ]
       },
       {
@@ -301,9 +266,9 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
         role: "Fractional CTO",
         period: "Dec 2024 - Present",
         bullets: [
-          "Lead development and delivery of core products while balancing hands-on engineering, DevOps ownership, product architecture, and backend system decisions.",
-          "Manage a small team of part-time developers with lightweight processes that keep execution efficient and maintainable.",
-          "Evaluate and prototype AI and automation workflows for client-facing product needs and internal operations across Atlassian-based workflow systems."
+          "Lead architecture and delivery for a US startup, managing a small part-time engineering team across backend architecture, DevOps, Atlassian Marketplace apps, CRM/marketing automation, and production releases.",
+          "Build a CRM and automated marketing platform from zero to production, turning founder and client requirements into API design, workflow automation, and release plans for an existing customer base.",
+          "Prototype AI and automation workflows for client-facing product needs and internal operations while keeping delivery lightweight and maintainable."
         ]
       },
       {
@@ -313,9 +278,9 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
         role: "Software developer",
         period: "Apr 2024 - Sep 2024",
         bullets: [
-          "Built 3 AI-first SaaS and enterprise applications across legal transcription, business report generation, and self-hostable conversational assistants.",
-          "Shipped a subscription transcription product for a law firm using a fine-tuned, context-aware Whisper workflow, Stripe subscriptions, React, Django, and CloudFront.",
-          "Delivered report generation and enterprise assistant products involving generated content, chart creation, PDF export, open-source LLM support, search, speech input, and sandboxed code execution."
+          "Shipped 3 AI-first SaaS and enterprise products in 6 months: legal transcription, business report generation, and a self-hostable enterprise assistant.",
+          "Built a subscription transcription workflow for a law firm using context-aware Whisper, Stripe subscriptions, React, Django, and CloudFront.",
+          "Delivered enterprise assistant and reporting workflows with open-source LLM support, search, speech input, persistence, sandboxed execution, generated charts, and PDF export."
         ]
       },
       {
@@ -325,9 +290,9 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
         role: "Software engineer",
         period: "Jun 2021 - Oct 2023",
         bullets: [
-          "Led development and upkeep of RESTful microservices powering checkout and pricing business logic for a global ecommerce marketplace.",
-          "Operated services across Golang, Node.js, Postgres, DynamoDB, Kafka, SQS, AWS, Kubernetes, CircleCI, Harness, and Datadog.",
-          "Built domain depth across global marketplace operations, regulatory compliance, peak traffic performance, scalability, and fraud prevention."
+          "Built and operated checkout and pricing microservices for global marketplace systems serving a platform that surpassed 50M lifetime trades, 15M buyers, and 1.7M sellers by 2023.",
+          "Owned backend delivery across Go, Node.js, PostgreSQL, DynamoDB, Kafka, SQS, AWS, Kubernetes, CircleCI, Harness, and Datadog for high-traffic, fraud-sensitive commerce workflows.",
+          "Improved marketplace domain reliability across checkout business logic, pricing rules, regulatory constraints, peak traffic, scalability, and fraud-risk workflows."
         ]
       },
       {
@@ -337,8 +302,8 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
         role: "Software engineer",
         period: "Nov 2019 - May 2021",
         bullets: [
-          "Built customer-facing web and backend systems for Ola Electric, including the official website, payment integrations, and scheduled/on-demand test-ride workflows.",
-          "Integrated 2 payment providers, Adyen and PayU, using React, Node.js, Java Spring Boot, and MySQL.",
+          "Built customer-facing website, payment, and test-ride systems during Ola Electric's launch cycle, including Adyen and PayU integrations for a vehicle launch that reached 100k+ reservations in 24 hours.",
+          "Delivered scheduled and on-demand test-ride workflows using React, Node.js, Java Spring Boot, and MySQL.",
           "Led external contractors, conducted 50+ interviews, mentored new joiners, and managed service deployments through Jenkins, Marathon, Mesos, and Azure."
         ]
       },
@@ -349,8 +314,8 @@ export function createDefaultPublicResume(content: SiteContent): TailoredResume 
         role: "Software developer",
         period: "Nov 2017 - Oct 2019",
         bullets: [
-          "Developed and maintained enterprise web applications for scheduling and activation of production changes and software loads across the organization.",
-          "Worked in a large travel technology environment across MEAN-stack workflows and Java-backed internal systems."
+          "Developed enterprise scheduling and software-load activation tools for travel technology operations across MEAN-stack workflows and Java-backed internal systems.",
+          "Supported production-change workflows used by internal engineering and operations teams in a large travel technology environment."
         ]
       }
     ],

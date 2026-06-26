@@ -80,7 +80,7 @@ async function renderResumePdf(resume: TailoredResume, theme: PdfTheme) {
   });
 
   if (resume.projects.length) {
-    writeSection(doc, "Notable Work", theme);
+    writeSection(doc, "Selected Achievements", theme);
     resume.projects.forEach((item) => {
       projectEntryHead(doc, item.name, item.context);
       bullets(doc, item.bullets);
